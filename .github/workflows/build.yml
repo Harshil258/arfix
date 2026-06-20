@@ -54,7 +54,7 @@ jobs:
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
           KEYSTORE_PATH: upload-keystore.jks
-        run: flutter build apk --release --no-daemon
+        run: flutter build apk --release
 
       - name: Build App Bundle
         env:
@@ -62,7 +62,7 @@ jobs:
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
           KEYSTORE_PATH: upload-keystore.jks
-        run: flutter build appbundle --release --no-daemon
+        run: flutter build appbundle --release
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
