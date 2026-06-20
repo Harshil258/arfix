@@ -1,0 +1,40 @@
+import { Router } from "express";
+import authRoutes from "./auth.routes";
+import couponRoutes from "./coupon.routes";
+import transactionRoutes from "./transaction.routes";
+import walletRoutes from "./wallet.routes";
+import productRoutes from "./product.routes";
+import userRoutes from "./user.routes";
+import supportRoutes from "./support.routes";
+import dashboardRoutes from "./dashboard.routes";
+import withdrawalRoutes from "./withdrawal.routes";
+import configRoutes from "./config.routes";
+import rewardRoutes from "./reward.routes";
+import notificationRoutes from "./notification.routes";
+import leaderboardRoutes from "./leaderboard.routes";
+import campaignRoutes from "./campaign.routes";
+import bannerRoutes from "./banner.routes";
+import razorpayRoutes from "./razorpay.routes";
+import videoRoutes from "./video.routes";
+
+const router = Router();
+
+router.use("/auth", authRoutes);
+router.use("/coupons", couponRoutes);
+router.use("/transactions", transactionRoutes);
+router.use("/wallet", walletRoutes);
+router.use("/products", productRoutes);
+router.use("/users", userRoutes);
+router.use("/support", supportRoutes);
+router.use("/dashboard", dashboardRoutes);
+router.use("/withdrawals", withdrawalRoutes);
+router.use("/config", configRoutes);
+router.use("/rewards", rewardRoutes);
+router.use("/notifications", notificationRoutes);
+router.use("/leaderboard", leaderboardRoutes);
+router.use("/campaigns", campaignRoutes);
+router.use("/banners", bannerRoutes);
+router.use("/razorpay", razorpayRoutes);
+router.use("/videos", videoRoutes);
+
+export default router;
