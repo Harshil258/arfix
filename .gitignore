@@ -46,6 +46,5 @@ app.*.map.json
 
 # Sensitive local files
 *.jks
-*.properties
-android/key.properties
-android/local.properties
+local.properties
+key.properties
