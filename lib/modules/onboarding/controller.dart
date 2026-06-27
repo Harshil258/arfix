@@ -27,9 +27,5 @@ class OnboardingController extends GetxController {
     Get.offAllNamed(AppRoutes.login);
   }
 
-  @override
-  void onClose() {
-    pageController.dispose();
-    super.onClose();
-  }
+
 }

@@ -131,14 +131,5 @@ class ProfileController extends GetxController {
     Get.offAllNamed(AppRoutes.login);
   }
 
-  @override
-  void onClose() {
-    nameController.dispose();
-    mobileController.dispose();
-    currentPasswordController.dispose();
-    newPasswordController.dispose();
-    confirmNewPasswordController.dispose();
-    deletePasswordController.dispose();
-    super.onClose();
-  }
+
 }

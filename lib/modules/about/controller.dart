@@ -74,11 +74,5 @@ class AboutController extends GetxController {
     }
   }
 
-  @override
-  void onClose() {
-    urlController.dispose();
-    titleController.dispose();
-    descriptionController.dispose();
-    super.onClose();
-  }
+
 }

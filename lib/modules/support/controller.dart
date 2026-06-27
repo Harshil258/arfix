@@ -58,10 +58,5 @@ class SupportController extends GetxController {
     isLoadingDetail.value = false;
   }
 
-  @override
-  void onClose() {
-    subjectController.dispose();
-    messageController.dispose();
-    super.onClose();
-  }
+
 }

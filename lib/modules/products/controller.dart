@@ -94,9 +94,5 @@ class ProductController extends GetxController {
     isLoadingDetail.value = false;
   }
 
-  @override
-  void onClose() {
-    searchController.dispose();
-    super.onClose();
-  }
+
 }

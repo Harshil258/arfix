@@ -141,10 +141,5 @@ class WithdrawalController extends GetxController {
     }
   }
 
-  @override
-  void onClose() {
-    amountCtrl.dispose();
-    upiCtrl.dispose();
-    super.onClose();
-  }
+
 }
