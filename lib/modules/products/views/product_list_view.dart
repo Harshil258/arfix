@@ -27,14 +27,19 @@ class ProductListView extends GetView<ProductController> {
               decoration: InputDecoration(
                 hintText: 'Search products...'.tr,
                 prefixIcon: const Icon(Icons.search, size: 22),
-                suffixIcon: Obx(() => controller.showCloseButton.value
-                    ? IconButton(
-                        icon: const Icon(Icons.clear, size: 20),
-                        onPressed: () {
-                          controller.searchController.clear();
-                        },
-                      )
-                    : const SizedBox.shrink()),
+                suffixIcon: Obx(() => IgnorePointer(
+                      ignoring: !controller.showCloseButton.value,
+                      child: AnimatedOpacity(
+                        opacity: controller.showCloseButton.value ? 1.0 : 0.0,
+                        duration: const Duration(milliseconds: 200),
+                        child: IconButton(
+                          icon: const Icon(Icons.clear, size: 20),
+                          onPressed: () {
+                            controller.searchController.clear();
+                          },
+                        ),
+                      ),
+                    )),
                 contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               ),
             ),
