@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
+import 'package:chucker_flutter/chucker_flutter.dart';
+
 import '../core/theme/app_theme.dart';
 import '../core/theme/theme_controller.dart';
 import 'bindings/initial_binding.dart';
@@ -27,6 +29,7 @@ class ArfixApp extends StatelessWidget {
       () => GetMaterialApp(
         title: 'Arfix Rewards',
         debugShowCheckedModeBanner: false,
+        navigatorKey: ChuckerFlutter.navigatorKey,
 
         // Theme
         theme: AppTheme.lightTheme,

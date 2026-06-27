@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart' hide Response;
+import 'package:chucker_flutter/chucker_flutter.dart';
 
 import '../constants/api_constants.dart';
 import '../storage/storage_service.dart';
@@ -41,6 +43,10 @@ class ApiClient extends GetxService {
         return handler.next(error);
       },
     ));
+
+    if (kDebugMode) {
+      _dio.interceptors.add(ChuckerDioInterceptor());
+    }
   }
 
   Future<Response> get(String path, {Map<String, dynamic>? queryParameters}) async {
