@@ -133,6 +133,7 @@ const Map<String, String> hi = {
   'Current password': 'वर्तमान पासवर्ड',
 
   // Customer Support
+  'Support': 'सहायता',
   'Need Help?': 'क्या आपको मदद की ज़रूरत है?',
   'Submit a ticket and we\'ll get back to you shortly.': 'एक टिकट सबमिट करें और हम जल्द ही आपसे संपर्क करेंगे।',
   'Brief description of your issue': 'अपनी समस्या का संक्षिप्त विवरण',
@@ -215,4 +216,25 @@ const Map<String, String> hi = {
   'Verification Failed': 'सत्यापन विफल',
   'Privacy Policy': 'गोपनीयता नीति',
   'Terms & Conditions': 'नियम और शर्तें',
+
+  // Missing translations additions
+  'Code': 'कोड',
+  'Coins Earned': 'अर्जित सिक्के',
+  'Error': 'त्रुटि',
+  'Forgot Password': 'पासवर्ड भूल गए',
+  'New Password': 'नया पासवर्ड',
+  'No notifications': 'कोई सूचना नहीं',
+  'No products found': 'कोई प्रोडक्ट नहीं मिला',
+  'No products yet': 'अभी तक कोई प्रोडक्ट नहीं',
+  'No scans yet': 'अभी तक कोई स्कैन नहीं',
+  'Password reset successfully. Please login with your new password.': 'पासवर्ड सफलतापूर्वक रीसेट हो गया। कृपया अपने नए पासवर्ड के साथ लॉगिन करें।',
+  'Redeem': 'भुनाएं',
+  'Scan your first ARFIX product!': 'अपना पहला ARFIX प्रोडक्ट स्कैन करें!',
+  'Search products...': 'प्रोडक्ट्स खोजें...',
+  'Something went wrong': 'कुछ गलत हो गया',
+  'Start scanning ARFIX products to see your history here': 'अपना इतिहास देखने के लिए ARFIX प्रोडक्ट्स को स्कैन करना शुरू करें',
+  'Success': 'सफलता',
+  'Total Scans': 'कुल स्कैन',
+  'Try a different search term': 'कोई अन्य खोज शब्द आज़माएं',
+  'Welcome!': 'स्वागत है!',
 };

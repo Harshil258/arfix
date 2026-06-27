@@ -133,6 +133,7 @@ const Map<String, String> en = {
   'Current password': 'Current password',
 
   // Customer Support
+  'Support': 'Support',
   'Need Help?': 'Need Help?',
   'Submit a ticket and we\'ll get back to you shortly.': 'Submit a ticket and we\'ll get back to you shortly.',
   'Brief description of your issue': 'Brief description of your issue',
@@ -215,4 +216,25 @@ const Map<String, String> en = {
   'Verification Failed': 'Verification Failed',
   'Privacy Policy': 'Privacy Policy',
   'Terms & Conditions': 'Terms & Conditions',
+
+  // Missing translations additions
+  'Code': 'Code',
+  'Coins Earned': 'Coins Earned',
+  'Error': 'Error',
+  'Forgot Password': 'Forgot Password',
+  'New Password': 'New Password',
+  'No notifications': 'No notifications',
+  'No products found': 'No products found',
+  'No products yet': 'No products yet',
+  'No scans yet': 'No scans yet',
+  'Password reset successfully. Please login with your new password.': 'Password reset successfully. Please login with your new password.',
+  'Redeem': 'Redeem',
+  'Scan your first ARFIX product!': 'Scan your first ARFIX product!',
+  'Search products...': 'Search products...',
+  'Something went wrong': 'Something went wrong',
+  'Start scanning ARFIX products to see your history here': 'Start scanning ARFIX products to see your history here',
+  'Success': 'Success',
+  'Total Scans': 'Total Scans',
+  'Try a different search term': 'Try a different search term',
+  'Welcome!': 'Welcome!',
 };
