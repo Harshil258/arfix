@@ -38,7 +38,7 @@ class ProductModel {
       images: json['images'] != null
           ? (json['images'] as List).map((e) => ProductImage.fromJson(e)).toList()
           : [],
-      averageRating: (json['averageRating'] ?? 0).toDouble(),
+      averageRating: ((json['review'] ?? json['averageRating']) ?? 0).toDouble(),
       totalReviews: json['totalReviews'] ?? 0,
       isActive: json['isActive'] ?? true,
       createdAt: json['createdAt'],

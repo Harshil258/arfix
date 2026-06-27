@@ -437,6 +437,7 @@ class HomeView extends GetView<HomeController> {
                 children: [
                   Expanded(
                     child: Container(
+                      padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
                         color: AppColors.primary.withValues(alpha: 0.05),
                         borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
@@ -444,10 +445,10 @@ class HomeView extends GetView<HomeController> {
                       child: Center(
                         child: product.primaryImageUrl.isNotEmpty
                             ? ClipRRect(
-                                borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
+                                borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
                                 child: Image.network(
                                   Helpers.buildImageUrl(product.primaryImageUrl),
-                                  fit: BoxFit.cover, width: double.infinity,
+                                  fit: BoxFit.contain, width: double.infinity,
                                   errorBuilder: (_, __, ___) => const Icon(Icons.inventory_2, size: 40, color: AppColors.primary),
                                 ),
                               )

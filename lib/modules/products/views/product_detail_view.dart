@@ -45,11 +45,12 @@ class ProductDetailView extends GetView<ProductController> {
               // Image
               Container(
                 height: 380, width: double.infinity,
+                padding: const EdgeInsets.all(16),
                 color: AppColors.primary.withValues(alpha: 0.05),
                 child: product.primaryImageUrl.isNotEmpty
                     ? Image.network(
                         Helpers.buildImageUrl(product.primaryImageUrl),
-                        fit: BoxFit.cover,
+                        fit: BoxFit.contain,
                         errorBuilder: (_, __, ___) =>
                             const Center(child: Icon(Icons.inventory_2, size: 64, color: AppColors.primary)),
                       )

@@ -105,16 +105,17 @@ class ProductListView extends GetView<ProductController> {
                           flex: 3,
                           child: Container(
                             width: double.infinity,
+                            padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
                               color: AppColors.primary.withValues(alpha: 0.05),
                               borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
                             ),
                             child: product.primaryImageUrl.isNotEmpty
                                 ? ClipRRect(
-                                    borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+                                    borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
                                     child: Image.network(
                                       Helpers.buildImageUrl(product.primaryImageUrl),
-                                      fit: BoxFit.cover,
+                                      fit: BoxFit.contain,
                                       errorBuilder: (_, __, ___) =>
                                           const Center(child: Icon(Icons.inventory_2, size: 40, color: AppColors.primary)),
                                     ),
