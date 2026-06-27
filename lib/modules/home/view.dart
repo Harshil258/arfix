@@ -40,12 +40,6 @@ class HomeView extends GetView<HomeController> {
                     Text('ARFIX', style: Theme.of(context).textTheme.headlineMedium),
                   ],
                 ),
-                actions: [
-                  IconButton(
-                    icon: const Icon(Icons.notifications_outlined),
-                    onPressed: () => Get.toNamed(AppRoutes.notifications),
-                  ),
-                ],
               ),
               // Content
               SliverToBoxAdapter(
