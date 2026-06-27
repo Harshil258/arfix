@@ -97,6 +97,7 @@ const Map<String, String> hi = {
   // Password Reset & Auth
   'Reset Password': 'पासवर्ड रीसेट करें',
   'Send Reset Link': 'रीसेट लिंक भेजें',
+  'Send OTP': 'OTP भेजें',
   'Enter your email address and we\'ll send you a link to reset your password.': 'अपना ईमेल पता दर्ज करें और हम आपको अपना पासवर्ड रीसेट करने के लिए एक लिंक भेजेंगे।',
   'Set New Password': 'नया पासवर्ड सेट करें',
   'Enter the reset token sent to your email and your new password below.': 'अपने ईमेल पर भेजा गया रीसेट टोकन और नीचे अपना नया पासवर्ड दर्ज करें।',

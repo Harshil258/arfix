@@ -44,7 +44,7 @@ class ForgotPasswordView extends GetView<AuthController> {
                 ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.1),
                 const SizedBox(height: 32),
                 Obx(() => CustomButton(
-                  text: 'Send Reset Link'.tr,
+                  text: 'Send OTP'.tr,
                   isLoading: controller.isLoading.value,
                   onPressed: controller.forgotPassword,
                 )).animate().fadeIn(delay: 500.ms).slideY(begin: 0.1),

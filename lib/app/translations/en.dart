@@ -97,6 +97,7 @@ const Map<String, String> en = {
   // Password Reset & Auth
   'Reset Password': 'Reset Password',
   'Send Reset Link': 'Send Reset Link',
+  'Send OTP': 'Send OTP',
   'Enter your email address and we\'ll send you a link to reset your password.': 'Enter your email address and we\'ll send you a link to reset your password.',
   'Set New Password': 'Set New Password',
   'Enter the reset token sent to your email and your new password below.': 'Enter the reset token sent to your email and your new password below.',
