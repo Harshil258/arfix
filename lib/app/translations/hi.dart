@@ -101,8 +101,10 @@ const Map<String, String> hi = {
   'Enter your email address and we\'ll send you a link to reset your password.': 'अपना ईमेल पता दर्ज करें और हम आपको अपना पासवर्ड रीसेट करने के लिए एक लिंक भेजेंगे।',
   'Set New Password': 'नया पासवर्ड सेट करें',
   'Enter the reset token sent to your email and your new password below.': 'अपने ईमेल पर भेजा गया रीसेट टोकन और नीचे अपना नया पासवर्ड दर्ज करें।',
+  'Enter your new password below.': 'नीचे अपना नया पासवर्ड दर्ज करें।',
   'Reset Token / Code': 'रीसेट टोकन / कोड',
   'Reset token is required': 'रीसेट टोकन आवश्यक है',
+  'Reset token is missing. Please verify OTP again.': 'रीसेट टोकन गायब है। कृपया फिर से ओटीपी सत्यापित करें।',
   'Confirm New Password': 'नए पासवर्ड की पुष्टि करें',
 
   // Validators

@@ -33,20 +33,11 @@ class ResetPasswordView extends GetView<AuthController> {
                     .animate().fadeIn(delay: 200.ms),
                 const SizedBox(height: 8),
                 Text(
-                  'Enter the reset token sent to your email and your new password below.'.tr,
+                  'Enter your new password below.'.tr,
                   style: theme.textTheme.bodyLarge?.copyWith(
                     color: theme.textTheme.bodySmall?.color),
                 ).animate().fadeIn(delay: 300.ms),
                 const SizedBox(height: 32),
-                
-                // Token Field
-                CustomTextField(
-                  controller: controller.resetTokenController,
-                  hintText: 'Reset Token / Code'.tr,
-                  prefixIcon: Icons.vpn_key_outlined,
-                  validator: (v) => v == null || v.trim().isEmpty ? 'Reset token is required'.tr : null,
-                ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.1),
-                const SizedBox(height: 16),
                 
                 // New Password Field
                 CustomTextField(

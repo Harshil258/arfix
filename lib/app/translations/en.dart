@@ -101,8 +101,10 @@ const Map<String, String> en = {
   'Enter your email address and we\'ll send you a link to reset your password.': 'Enter your email address and we\'ll send you a link to reset your password.',
   'Set New Password': 'Set New Password',
   'Enter the reset token sent to your email and your new password below.': 'Enter the reset token sent to your email and your new password below.',
+  'Enter your new password below.': 'Enter your new password below.',
   'Reset Token / Code': 'Reset Token / Code',
   'Reset token is required': 'Reset token is required',
+  'Reset token is missing. Please verify OTP again.': 'Reset token is missing. Please verify OTP again.',
   'Confirm New Password': 'Confirm New Password',
 
   // Validators

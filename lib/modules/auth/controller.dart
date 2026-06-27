@@ -119,6 +119,14 @@ class AuthController extends GetxController {
   }
 
   Future<void> resetPassword() async {
+    if (resetTokenController.text.trim().isEmpty) {
+      Helpers.showSnackbar(
+        title: 'Error'.tr,
+        message: 'Reset token is missing. Please verify OTP again.'.tr,
+        isError: true,
+      );
+      return;
+    }
     if (!resetFormKey.currentState!.validate()) return;
     isLoading.value = true;
     try {
