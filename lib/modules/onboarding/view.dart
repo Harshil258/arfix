@@ -37,9 +37,11 @@ class OnboardingView extends GetView<OnboardingController> {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 40),
                     child: SingleChildScrollView(
+                      clipBehavior: Clip.none,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          const SizedBox(height: 24),
                           Container(
                             width: 160, height: 160,
                             decoration: BoxDecoration(

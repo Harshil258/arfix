@@ -14,6 +14,9 @@ class ProductController extends GetxController {
   final errorMessage = ''.obs;
   final searchController = TextEditingController();
 
+  final showCloseButton = false.obs;
+  final searchQuery = ''.obs;
+
   int _currentPage = 1;
   bool _hasMore = true;
 
@@ -25,6 +28,17 @@ class ProductController extends GetxController {
   void onInit() {
     super.onInit();
     loadProducts();
+
+    // Listen to changes to toggle close button and update search query
+    searchController.addListener(() {
+      searchQuery.value = searchController.text;
+      showCloseButton.value = searchController.text.isNotEmpty;
+    });
+
+    // Automatically trigger search after 500ms of no typing
+    debounce(searchQuery, (query) {
+      loadProducts(refresh: true);
+    }, time: const Duration(milliseconds: 500));
   }
 
   Future<void> loadProducts({bool refresh = false}) async {

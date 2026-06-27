@@ -15,6 +15,7 @@ class SignupView extends GetView<AuthController> {
       appBar: AppBar(leading: const BackButton()),
       body: SafeArea(
         child: SingleChildScrollView(
+          clipBehavior: Clip.none,
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Form(
             key: controller.signupFormKey,

@@ -16,6 +16,7 @@ class LoginView extends GetView<AuthController> {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
+          clipBehavior: Clip.none,
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Form(
             key: controller.loginFormKey,

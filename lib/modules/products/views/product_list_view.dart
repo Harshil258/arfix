@@ -27,13 +27,14 @@ class ProductListView extends GetView<ProductController> {
               decoration: InputDecoration(
                 hintText: 'Search products...'.tr,
                 prefixIcon: const Icon(Icons.search, size: 22),
-                suffixIcon: IconButton(
-                  icon: const Icon(Icons.clear, size: 20),
-                  onPressed: () {
-                    controller.searchController.clear();
-                    controller.loadProducts(refresh: true);
-                  },
-                ),
+                suffixIcon: Obx(() => controller.showCloseButton.value
+                    ? IconButton(
+                        icon: const Icon(Icons.clear, size: 20),
+                        onPressed: () {
+                          controller.searchController.clear();
+                        },
+                      )
+                    : const SizedBox.shrink()),
                 contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               ),
             ),

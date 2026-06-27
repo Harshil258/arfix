@@ -16,6 +16,7 @@ class ForgotPasswordView extends GetView<AuthController> {
       appBar: AppBar(title: Text('Forgot Password'.tr)),
       body: SafeArea(
         child: SingleChildScrollView(
+          clipBehavior: Clip.none,
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Form(
             key: controller.forgotPasswordFormKey,
