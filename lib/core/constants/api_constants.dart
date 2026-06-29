@@ -60,6 +60,7 @@ class ApiConstants {
 
   // Config endpoints
   static const String config = '/config';
+  static const String getSocialLinks = '/admin-settings/get-social-link';
 
   // Withdrawal endpoints
   static const String withdrawals = '/withdrawals';

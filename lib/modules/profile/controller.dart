@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../app/routes/app_routes.dart';
+import '../../core/constants/api_constants.dart';
+import '../../core/network/api_client.dart';
 import '../../core/network/api_exceptions.dart';
 import '../../core/storage/storage_service.dart';
 import '../../core/utils/helpers.dart';
@@ -10,6 +12,7 @@ import '../../data/repositories/auth_repository.dart';
 class ProfileController extends GetxController {
   final _repo = AuthRepository();
   final _storage = Get.find<StorageService>();
+  final _apiClient = Get.find<ApiClient>();
 
   final user = Rxn<UserModel>();
   final isLoading = false.obs;
@@ -17,6 +20,10 @@ class ProfileController extends GetxController {
   final mobileController = TextEditingController();
   final editFormKey = GlobalKey<FormState>();
   
+  // Social Links
+  final socialLinks = <String, String>{}.obs;
+  final isLoadingSocialLinks = false.obs;
+
   // Language Support
   final currentLanguage = 'English'.obs;
 
@@ -37,6 +44,37 @@ class ProfileController extends GetxController {
     // Load current language
     final lang = _storage.read<String>('language_code') ?? 'en';
     currentLanguage.value = lang == 'hi' ? 'Hindi' : 'English';
+
+    // Populate fallback social links
+    socialLinks.value = {
+      'facebook': 'https://facebook.com',
+      'instagram': 'https://instagram.com',
+      'youtube': 'https://youtube.com',
+    };
+
+    fetchSocialLinks();
+  }
+
+  Future<void> fetchSocialLinks() async {
+    isLoadingSocialLinks.value = true;
+    try {
+      final response = await _apiClient.get(ApiConstants.getSocialLinks);
+      if (response.data != null && response.data['success'] == true) {
+        final data = response.data['data'];
+        if (data is Map) {
+          socialLinks.clear();
+          data.forEach((key, value) {
+            if (value != null && value.toString().isNotEmpty) {
+              socialLinks[key.toString()] = value.toString();
+            }
+          });
+        }
+      }
+    } catch (e) {
+      debugPrint('Error fetching social links: $e');
+    } finally {
+      isLoadingSocialLinks.value = false;
+    }
   }
 
   void changeLanguage(String lang) {

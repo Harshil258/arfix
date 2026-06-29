@@ -148,29 +148,19 @@ class ProfileView extends GetView<ProfileController> {
               ),
             ),
             const SizedBox(height: 12),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                _buildSocialButton(
-                  icon: Icons.facebook,
-                  color: const Color(0xFF1877F2),
-                  tooltip: 'Facebook',
-                  onTap: () => _launchUrl('https://facebook.com'),
-                ),
-                _buildSocialButton(
-                  icon: Icons.camera_alt, // Represents Instagram
-                  color: const Color(0xFFE1306C),
-                  tooltip: 'Instagram',
-                  onTap: () => _launchUrl('https://instagram.com'),
-                ),
-                _buildSocialButton(
-                  icon: Icons.play_arrow_rounded, // Represents YouTube
-                  color: const Color(0xFFFF0000),
-                  tooltip: 'YouTube',
-                  onTap: () => _launchUrl('https://youtube.com'),
-                ),
-              ],
-            ).animate().fadeIn(delay: 150.ms),
+            Obx(() => Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: controller.socialLinks.entries.map((entry) {
+                    final key = entry.key;
+                    final url = entry.value;
+                    return _buildSocialButton(
+                      icon: _getSocialIcon(key),
+                      color: _getSocialColor(key),
+                      tooltip: key.capitalizeFirst ?? key,
+                      onTap: () => _launchUrl(url),
+                    );
+                  }).toList(),
+                )).animate().fadeIn(delay: 150.ms),
             const SizedBox(height: 32),
 
             // Version
@@ -246,6 +236,45 @@ class ProfileView extends GetView<ProfileController> {
       }
     } catch (e) {
       Helpers.showSnackbar(title: 'Error', message: 'Could not launch URL: $e', isError: true);
+    }
+  }
+
+  IconData _getSocialIcon(String key) {
+    switch (key.toLowerCase()) {
+      case 'facebook':
+        return Icons.facebook;
+      case 'instagram':
+        return Icons.camera_alt;
+      case 'youtube':
+        return Icons.play_arrow_rounded;
+      case 'twitter':
+      case 'x':
+        return Icons.close;
+      case 'linkedin':
+        return Icons.business;
+      case 'website':
+      case 'globe':
+        return Icons.language;
+      default:
+        return Icons.link;
+    }
+  }
+
+  Color _getSocialColor(String key) {
+    switch (key.toLowerCase()) {
+      case 'facebook':
+        return const Color(0xFF1877F2);
+      case 'instagram':
+        return const Color(0xFFE1306C);
+      case 'youtube':
+        return const Color(0xFFFF0000);
+      case 'twitter':
+      case 'x':
+        return Colors.black;
+      case 'linkedin':
+        return const Color(0xFF0A66C2);
+      default:
+        return AppColors.primary;
     }
   }
 
