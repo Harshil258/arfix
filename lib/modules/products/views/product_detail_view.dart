@@ -66,18 +66,20 @@ class ProductDetailView extends GetView<ProductController> {
                         .animate().fadeIn(delay: 100.ms).slideX(begin: -0.05),
                     const SizedBox(height: 12),
                     // Rating
-                    Row(
-                      children: [
-                        ...List.generate(5, (i) => Icon(
-                          i < product.averageRating.round() ? Icons.star : Icons.star_border,
-                          color: AppColors.coinGold, size: 20,
-                        )),
-                        const SizedBox(width: 8),
-                        Text('${product.averageRating} (${product.totalReviews} ${'reviews'.tr})',
-                          style: Theme.of(context).textTheme.bodyMedium),
-                      ],
-                    ).animate().fadeIn(delay: 200.ms),
-                    const SizedBox(height: 24),
+                    if (product.averageRating > 0) ...[
+                      Row(
+                        children: [
+                          ...List.generate(5, (i) => Icon(
+                            i < product.averageRating.round() ? Icons.star : Icons.star_border,
+                            color: AppColors.coinGold, size: 20,
+                          )),
+                          const SizedBox(width: 8),
+                          Text('${product.averageRating} (${product.totalReviews} ${'reviews'.tr})',
+                            style: Theme.of(context).textTheme.bodyMedium),
+                        ],
+                      ).animate().fadeIn(delay: 200.ms),
+                      const SizedBox(height: 24),
+                    ],
                     Text('Description'.tr, style: Theme.of(context).textTheme.headlineSmall),
                     const SizedBox(height: 8),
                     Text(product.description,

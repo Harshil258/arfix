@@ -132,17 +132,19 @@ class ProductListView extends GetView<ProductController> {
                               children: [
                                 Text(product.name, maxLines: 2, overflow: TextOverflow.ellipsis,
                                   style: Theme.of(context).textTheme.titleSmall),
-                                const Spacer(),
-                                Row(
-                                  children: [
-                                    const Icon(Icons.star, color: AppColors.coinGold, size: 14),
-                                    const SizedBox(width: 4),
-                                    Text('${product.averageRating}',
-                                      style: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w600)),
-                                    Text(' (${product.totalReviews})',
-                                      style: Theme.of(context).textTheme.bodySmall),
-                                  ],
-                                ),
+                                if (product.averageRating > 0) ...[
+                                  const Spacer(),
+                                  Row(
+                                    children: [
+                                      const Icon(Icons.star, color: AppColors.coinGold, size: 14),
+                                      const SizedBox(width: 4),
+                                      Text('${product.averageRating}',
+                                        style: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w600)),
+                                      Text(' (${product.totalReviews})',
+                                        style: Theme.of(context).textTheme.bodySmall),
+                                    ],
+                                  ),
+                                ],
                               ],
                             ),
                           ),

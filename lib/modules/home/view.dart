@@ -463,15 +463,17 @@ class HomeView extends GetView<HomeController> {
                       children: [
                         Text(product.name, maxLines: 1, overflow: TextOverflow.ellipsis,
                           style: Theme.of(context).textTheme.titleSmall),
-                        const SizedBox(height: 4),
-                        Row(
-                          children: [
-                            const Icon(Icons.star, color: AppColors.coinGold, size: 14),
-                            const SizedBox(width: 4),
-                            Text('${product.averageRating}', style: Theme.of(context).textTheme.bodySmall),
-                            Text(' (${product.totalReviews})', style: Theme.of(context).textTheme.bodySmall),
-                          ],
-                        ),
+                        if (product.averageRating > 0) ...[
+                          const SizedBox(height: 4),
+                          Row(
+                            children: [
+                              const Icon(Icons.star, color: AppColors.coinGold, size: 14),
+                              const SizedBox(width: 4),
+                              Text('${product.averageRating}', style: Theme.of(context).textTheme.bodySmall),
+                              Text(' (${product.totalReviews})', style: Theme.of(context).textTheme.bodySmall),
+                            ],
+                          ),
+                        ],
                       ],
                     ),
                   ),
