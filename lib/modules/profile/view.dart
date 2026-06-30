@@ -156,7 +156,7 @@ class ProfileView extends GetView<ProfileController> {
                     return _buildSocialButton(
                       icon: _getSocialIcon(key),
                       color: _getSocialColor(key),
-                      tooltip: key.capitalizeFirst ?? key,
+                      tooltip: key.replaceAll(RegExp('link', caseSensitive: false), '').capitalizeFirst ?? key,
                       onTap: () => _launchUrl(url),
                     );
                   }).toList(),
@@ -240,41 +240,38 @@ class ProfileView extends GetView<ProfileController> {
   }
 
   IconData _getSocialIcon(String key) {
-    switch (key.toLowerCase()) {
-      case 'facebook':
-        return Icons.facebook;
-      case 'instagram':
-        return Icons.camera_alt;
-      case 'youtube':
-        return Icons.play_arrow_rounded;
-      case 'twitter':
-      case 'x':
-        return Icons.close;
-      case 'linkedin':
-        return Icons.business;
-      case 'website':
-      case 'globe':
-        return Icons.language;
-      default:
-        return Icons.link;
+    final lowerKey = key.toLowerCase();
+    if (lowerKey.contains('facebook')) {
+      return Icons.facebook;
+    } else if (lowerKey.contains('instagram')) {
+      return Icons.camera_alt;
+    } else if (lowerKey.contains('youtube')) {
+      return Icons.play_arrow_rounded;
+    } else if (lowerKey.contains('twitter') || lowerKey == 'x') {
+      return Icons.close;
+    } else if (lowerKey.contains('linkedin')) {
+      return Icons.business;
+    } else if (lowerKey.contains('website') || lowerKey.contains('globe')) {
+      return Icons.language;
+    } else {
+      return Icons.link;
     }
   }
 
   Color _getSocialColor(String key) {
-    switch (key.toLowerCase()) {
-      case 'facebook':
-        return const Color(0xFF1877F2);
-      case 'instagram':
-        return const Color(0xFFE1306C);
-      case 'youtube':
-        return const Color(0xFFFF0000);
-      case 'twitter':
-      case 'x':
-        return Colors.black;
-      case 'linkedin':
-        return const Color(0xFF0A66C2);
-      default:
-        return AppColors.primary;
+    final lowerKey = key.toLowerCase();
+    if (lowerKey.contains('facebook')) {
+      return const Color(0xFF1877F2);
+    } else if (lowerKey.contains('instagram')) {
+      return const Color(0xFFE1306C);
+    } else if (lowerKey.contains('youtube')) {
+      return const Color(0xFFFF0000);
+    } else if (lowerKey.contains('twitter') || lowerKey == 'x') {
+      return Colors.black;
+    } else if (lowerKey.contains('linkedin')) {
+      return const Color(0xFF0A66C2);
+    } else {
+      return AppColors.primary;
     }
   }
 

@@ -47,9 +47,9 @@ class ProfileController extends GetxController {
 
     // Populate fallback social links
     socialLinks.value = {
-      'facebook': 'https://facebook.com',
-      'instagram': 'https://instagram.com',
-      'youtube': 'https://youtube.com',
+      'facebookLink': 'https://facebook.com',
+      'instagramLink': 'https://instagram.com',
+      'youtubeLink': 'https://youtube.com',
     };
 
     fetchSocialLinks();
