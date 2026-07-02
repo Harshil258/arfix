@@ -6,7 +6,7 @@ class ApiConstants {
   // Base URL - use local network IP for physical device testing
   static const String baseUrl = 'https://api.artilefix.com/';
   // https://affiliate-occupier-viewable.ngrok-free.dev/api/v1
-  static const String apiPrefix = '/api/v1';
+  static const String apiPrefix = 'api/v1';
   static String get apiBaseUrl => '$baseUrl$apiPrefix';
 
   // Auth endpoints
