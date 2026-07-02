@@ -470,7 +470,8 @@ class HomeView extends GetView<HomeController> {
                               const Icon(Icons.star, color: AppColors.coinGold, size: 14),
                               const SizedBox(width: 4),
                               Text('${product.averageRating}', style: Theme.of(context).textTheme.bodySmall),
-                              Text(' (${product.totalReviews})', style: Theme.of(context).textTheme.bodySmall),
+                              if (product.totalReviews > 0)
+                                Text(' (${product.totalReviews})', style: Theme.of(context).textTheme.bodySmall),
                             ],
                           ),
                         ],

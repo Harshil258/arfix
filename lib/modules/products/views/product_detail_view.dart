@@ -74,8 +74,12 @@ class ProductDetailView extends GetView<ProductController> {
                             color: AppColors.coinGold, size: 20,
                           )),
                           const SizedBox(width: 8),
-                          Text('${product.averageRating} (${product.totalReviews} ${'reviews'.tr})',
-                            style: Theme.of(context).textTheme.bodyMedium),
+                          Text(
+                            product.totalReviews > 0
+                                ? '${product.averageRating} (${product.totalReviews} ${'reviews'.tr})'
+                                : '${product.averageRating}',
+                            style: Theme.of(context).textTheme.bodyMedium,
+                          ),
                         ],
                       ).animate().fadeIn(delay: 200.ms),
                       const SizedBox(height: 24),

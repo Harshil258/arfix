@@ -140,8 +140,9 @@ class ProductListView extends GetView<ProductController> {
                                       const SizedBox(width: 4),
                                       Text('${product.averageRating}',
                                         style: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w600)),
-                                      Text(' (${product.totalReviews})',
-                                        style: Theme.of(context).textTheme.bodySmall),
+                                      if (product.totalReviews > 0)
+                                        Text(' (${product.totalReviews})',
+                                          style: Theme.of(context).textTheme.bodySmall),
                                     ],
                                   ),
                                 ],
