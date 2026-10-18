@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
+import '../../core/constants/app_constants.dart';
 import '../../core/constants/color_constants.dart';
 import '../../core/utils/helpers.dart';
 import 'controller.dart';
@@ -74,7 +75,7 @@ class AboutView extends GetView<AboutController> {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      '${'Version'.tr} 1.0.0',
+                      '${'Version'.tr} ${AppConstants.appVersion}',
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
                     const SizedBox(height: 16),

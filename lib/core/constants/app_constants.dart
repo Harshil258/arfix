@@ -3,6 +3,7 @@ class AppConstants {
 
   static const String appName = 'Arfix Rewards';
   static const String appTagline = 'Scan. Earn. Redeem.';
+  static const String appVersion = '1.0.1';
 
   // Storage keys
   static const String tokenKey = 'access_token';

@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../app/routes/app_routes.dart';
+import '../../core/constants/app_constants.dart';
 import '../../core/constants/color_constants.dart';
 import '../../core/theme/theme_controller.dart';
 import '../../core/utils/helpers.dart';
@@ -164,7 +165,7 @@ class ProfileView extends GetView<ProfileController> {
             const SizedBox(height: 32),
 
             // Version
-            Center(child: Text('${'Version'.tr} 1.0.0',
+            Center(child: Text('${'Version'.tr} ${AppConstants.appVersion}',
               style: Theme.of(context).textTheme.bodySmall)),
             const SizedBox(height: 16),
           ],

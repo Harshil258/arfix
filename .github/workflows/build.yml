@@ -83,8 +83,9 @@ jobs:
             TAG_NAME="${{ github.ref_name }}"
             RELEASE_NAME="arfix $TAG_NAME"
           else
-            TAG_NAME="v1.0.0-build-${{ github.run_number }}"
-            RELEASE_NAME="arfix Build v1.0.0 (Build #${{ github.run_number }})"
+            APP_VERSION=$(grep '^version:' pubspec.yaml | head -n 1 | awk '{print $2}' | tr -d '\r')
+            TAG_NAME="v${APP_VERSION}-build-${{ github.run_number }}"
+            RELEASE_NAME="arfix v${APP_VERSION} (Build #${{ github.run_number }})"
           fi
           echo "tag_name=$TAG_NAME" >> $GITHUB_OUTPUT
           echo "release_name=$RELEASE_NAME" >> $GITHUB_OUTPUT
